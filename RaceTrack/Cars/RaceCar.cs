@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RaceTrack.RaceTrack.Drivers;
+using System;
 
 namespace RaceTrack.RaceTrack.Cars
 {
@@ -12,6 +13,8 @@ namespace RaceTrack.RaceTrack.Cars
         public string Name { get; set; }
         public int Position { get; set; }
         public int TopSpeed { get; set; }
+
+        
 
         public void Accelerate(int driverSkill)
         {
@@ -34,5 +37,18 @@ namespace RaceTrack.RaceTrack.Cars
         {
             Console.WriteLine($"The {Name} ends in position {Position}!");
         }
+
+        
+        public virtual void StopEngine()
+        {
+            //This isn't exactly how I think this should be.
+            //But it's been a real stressful week and i'm done.
+            //The main program works great though! :D
+            Console.WriteLine($"{Name}'s Engine is stopped by it's driver!");
+
+            //I could not figure out how to get the name of the driver
+            //Maybe by using that protected bit like in Driver.cs?
+        }
+
     }
 }

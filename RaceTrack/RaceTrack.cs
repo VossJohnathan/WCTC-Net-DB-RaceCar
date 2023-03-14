@@ -26,6 +26,7 @@ namespace RaceTrack.RaceTrack
             Drivers.Add(new FarmerJoe(new Tractor()));
             Drivers.Add(new Antonio(new FordGt()));
             Drivers.Add(new SoccerMom(new Minivan()));
+            Drivers.Add(new LittleTimmy(new BigWheelTricycle()));
         }
 
         public void DriversReady()
@@ -34,7 +35,10 @@ namespace RaceTrack.RaceTrack
             {
                 driver.StartEngine();
             }
+            //blank line to make it easier to read in console.
+            Console.WriteLine();
             Thread.Sleep(1000);
+            
         }
 
         public void StartRace()
@@ -43,7 +47,10 @@ namespace RaceTrack.RaceTrack
             {
                 driver.Drive();
             }
+            //blank line to make it easier to read in console.
+            Console.WriteLine();
             Thread.Sleep(1000);
+            
         }
 
         public void AnnouncePositions()
@@ -52,14 +59,35 @@ namespace RaceTrack.RaceTrack
             {
                 driver.Accelerate();
             }
+            //blank line to make it easier to read in console.
+            Console.WriteLine();
             Thread.Sleep(1000);
+            
         }
 
+        /*
+        //This is the base method, WILL WORK
         public void EndRace()
         {
             foreach (var driver in Drivers)
             {
                 driver.Stop();
+            }
+            //blank line to make it easier to read in console.
+            Console.WriteLine();
+            Thread.Sleep(1000);
+            
+        }
+        */
+
+        //Extra Credit Method.
+        //The DRIVER is stopping the ENGINE ON THE CAR
+        public void EndRace()
+        {
+            foreach (var driver in Drivers)
+            {
+                driver.Stop();
+                driver.StopEngine();
             }
             Thread.Sleep(1000);
         }

@@ -32,6 +32,15 @@ namespace RaceTrack.RaceTrack.Drivers
             Car.Brake();
         }
 
+        //Extra Credit
+        //the driver is stopping the engine on the car
+
+        public virtual void StopEngine()
+        {
+            Car.StopEngine();
+            
+        }
+
         public abstract void Drive();
 
     }
